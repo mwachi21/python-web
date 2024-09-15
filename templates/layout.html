@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/app.css')}}">
+	<title>Home</title>
+</head>
+
+<body>
+    <strong><nav>
+        <ul class="menu">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+      </nav></strong>
+
+{% block body %}
+
+
+<p>This is a Flask application.</p>
+
+
+{% endblock %}
+
+<script src="{{ url_for ('static', filename = 'js/app.js')}}"></script>
+</body>
+
+</html>

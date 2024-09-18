@@ -5,22 +5,43 @@
  
 <p> This is a About Page</p>
 <div id="hero">
-    <div id="hero-1"></div>
+    <!-- <div id="hero-1"></div> -->
+    <div class="fade"></div>
 </div>
-<div id="cards">
-    <div class="card">
-        1
-        <button>Aventador</button>
-    </div>
-    <div class="card">
-        2
-        <button>Aventador</button>
-    </div>
-    <div class="card"></div>
-        3
-        <button>Aventador</button>
-    </div>
-</div>
-<!-- <img src="{{ url_for ('static', filename='img/56.jpg')}}" alt="Not found" width="90%" margin="10%"> -->
- 
+    <!-- <img src="{{ url_for ('static', filename='img/56.jpg')}}" alt="Not found" width="90%" margin="10%"> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = [
+                "{{ url_for('static', filename='img/13.jpg') }}",
+                "{{ url_for('static', filename='img/14.jpg') }}",
+                "{{ url_for('static', filename='img/15.jpg') }}",
+                "{{ url_for('static', filename='img/16.jpg') }}",
+                "{{ url_for('static', filename='img/17.jpg') }}"
+            ];
+    
+            let currentIndex = 0;
+            const hero = document.getElementById('hero');
+            const fade = document.querySelector('.fade');
+            const intervalTime = 5000;
+    
+            function changeBg() {
+               
+                const newImage = new Image();
+                newImage.src = images[(currentIndex + 1) % images.length];
+                newImage.onload = function() {
+                    fade.style.backgroundImage = `url('${images[(currentIndex + 1) % images.length]}')`;
+                    fade.style.opacity = 1;
+                    
+                    setTimeout(() => {
+                        hero.style.backgroundImage = `url('${images[(currentIndex + 1) % images.length]}')`;
+                        fade.style.opacity = 0;
+                    }, 1000);
+                };
+    
+                currentIndex = (currentIndex + 1) % images.length;
+            }
+            setInterval(changeBg, intervalTime);
+            changeBg();
+        });
+    </script>
 {% endblock %}

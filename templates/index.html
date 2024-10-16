@@ -3,6 +3,12 @@
 {% block body %}
  
 <p> This is a home page</p>
-<img src="{{ url_for ('static', filename='img/12.jpg')}}" alt="Not found" width="80%">
+<!-- <img src="{{ url_for ('static', filename='img/12.jpg')}}" alt="Not found" width="80%"> -->
+
+<div class="container">
+    <h1>Take total <span class="glow-text">Camera Control.</span></h1>
+    <button class="play-button">Play <span class="play-icon">▶</span></button>
+    <button class="info-button">Go deeper on Camera Control <span class="plus-icon">+</span></button>
+</div>
 
 {% endblock %}

@@ -1,6 +1,7 @@
 * {
   margin: 1 auto;
   padding: 1 auto;
+  box-sizing: border-box;
 }
 
 body {
@@ -39,4 +40,47 @@ nav {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   z-index: -1;
+}
+
+.container {
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.container .glow-text {
+  color: #FF7B00;
+  text-shadow: 0 0 10px #FF7B00, 0 0 20px #FF7B00, 0 0 30px #FF7B00;
+}
+.container .play-button, .container .info-button {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+}
+.container .play-button .play-icon, .container .info-button .plus-icon {
+  margin-left: 10px;
+  font-weight: bold;
+}
+.container .play-button:hover, .container .info-button:hover {
+  background-color: #555;
+}
+.container .info-button {
+  background-color: #444;
+}
+.container .info-button:hover {
+  background-color: #666;
 }/*# sourceMappingURL=app.css.map */
